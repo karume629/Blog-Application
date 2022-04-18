@@ -1,24 +1,54 @@
-# README
+# Blog Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- A simple blog application illustrating the use of the `mvc` framework with `CRUD` capabilities.
 
-Things you may want to cover:
+On the application ,user is able to `create` a new entry,`read`,`update` existing entries and `delete` content
 
-* Ruby version
+![Home Page](/app/assets/images/home_page.png?raw=true "Employee Data title")
 
-* System dependencies
+## Application features
 
-* Configuration
+- Create an Article
+- Read an Article form our Database
+- Edit and Update an Article
+- Delete an Article
+- Create associated Comments on Articles
 
-* Database creation
+## How to set-up the application
 
-* Database initialization
+- Make sure you have configured Ruby and Rails correctly in your machine
 
-* How to run the test suite
+```bash
+ruby -v 
+```
+ruby 3.0 >
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+rails -v
+```
 
-* Deployment instructions
+Rails 7.0 >
 
-* ...
+- Clone the repository
+
+```bash
+https://github.com/karume629/Blog-Application.git
+```
+
+- Run `bundle install`
+
+- Create our database
+
+```bash
+rails db:reset
+```
+
+- Start your server
+```bash
+rails s
+```
+
+- You are free to clone and contribute to the Repo!.
+
+
+
