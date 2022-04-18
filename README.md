@@ -2,7 +2,7 @@
 
 - A simple blog application illustrating the use of the `mvc` framework with `CRUD` capabilities.
 
-On the application ,user is able to `create` a new entry,`read`,`update` existing entries and `delete` content
+On the application ,an anoymous user is able to `create` a new entry,`read`,`update` existing entries and `delete` content, one can create accompanied comments.
 
 ![Home Page](/app/assets/images/home_page.png?raw=true "Employee Data title")
 
