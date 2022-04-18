@@ -4,7 +4,7 @@
 
 On the application ,an anoymous user is able to `create` a new entry,`read`,`update` existing entries and `delete` content, one can create accompanied comments.
 
-![Home Page](/app/assets/images/home_page.png?raw=true "Employee Data title")
+![Home Page](/app/assets/images/home_page.png?raw=true "Employee Data title" width="60%" height="75%")
 
 ## Application features
 
