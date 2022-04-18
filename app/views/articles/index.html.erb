@@ -14,7 +14,7 @@
                 <p href="#" class="text-sm pb-3">
                 </p>
                 <p class="pb-6">
-                  truncate(article.body, :ommision => "... Read More", :length => 200)
+                  <%= truncate(strip_tags(article.body.to_s), :ommision => "... Read More", :length => 200) %>
                 </p>
             </div>
             <li>
