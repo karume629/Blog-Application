@@ -14,7 +14,7 @@
                 <p href="#" class="text-sm pb-3">
                 </p>
                 <p class="pb-6">
-                  <%= article.body %>
+                  truncate(<%= article.body %>, length: 250, separator: ' ')
                 </p>
             </div>
             <li>
