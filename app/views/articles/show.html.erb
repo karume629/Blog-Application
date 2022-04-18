@@ -1,0 +1,98 @@
+<article class="flex flex-col shadow my-4">
+    <!-- Article Image -->
+    <a href="#" class="hover:opacity-75">
+        <img src="https://source.unsplash.com/collection/1346951/1000x500?sig=1">
+    </a>
+    <div class="bg-white flex flex-col justify-start p-6">
+        <h1 class="text-2xl font-bold pb-3">
+          <%= @article.title %>
+        </h1>
+
+        <p class="text-3xl font-bold hover:text-gray-700 pb-4">
+          <%= @article.body %>
+        </p>
+    </div>
+
+    <ul>
+    <li>
+     <%= link_to "Edit", edit_article_path(@article), class: "w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4" %>
+    </li>
+    <li>
+      <%= link_to "Destroy", article_path(@article), data: {
+                        turbo_method: :delete,
+                        turbo_confirm: "Are you sure?"
+                    } , 
+          class: "w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4" %>
+    </li>
+    </ul>
+
+    <h2 class="text-2xl font-bold pb-3">Comments</h2>
+    <% @article.comments.each do |comment| %>
+    <p>
+        <strong class="text-lg text-blue-800 font-bold flex items-center">
+          Commenter:
+        </strong>
+        <h1 class="text-2xl font-bold pb-3">
+          <%= comment.commenter %>
+        </h1>
+    </p>
+
+    <div>
+       <strong class="text-lg text-blue-800 font-bold flex items-center">
+          Comment:
+        </strong>
+        <p class="text-2xl font-bold pb-3">
+          <%= comment.body %>
+        </p>
+    </div>
+    <% end %>
+
+    <h1 class="text-2xl font-bold pb-3">Add a comment</h1>
+    <%= form_with model: [ @article, @article.comments.build ] do |form| %>
+    <div>
+        <%= form.label :commenter, class: "block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2" %>
+        <div class="mt-1 sm:mt-0 sm:col-span-2">
+            <div class="max-w-lg flex rounded-md shadow-sm">
+            <%= form.text_field :commenter, class: "flex-1 block md:w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300" %>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <%= form.label :body, class: "block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2" %>
+        <div class="mt-1 sm:mt-0 sm:col-span-2">
+            <div class="max-w-lg flex rounded-md shadow-sm">
+            <%= form.text_area :body, class: "flex-1 block md:w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300" %>
+            </div>
+        </div>
+    </div>
+
+    <p>
+       <%= form.submit class: "w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4" %>
+    </p>
+    <% end %>
+</article>
+
+<div class="w-full flex flex-col text-center md:text-left md:flex-row shadow bg-white mt-10 mb-10 p-6">
+    <div class="w-full md:w-1/5 flex justify-center md:justify-start pb-4">
+        <img src="https://source.unsplash.com/collection/1346951/150x150?sig=1" class="rounded-full shadow h-32 w-32">
+    </div>
+    <div class="flex-1 flex flex-col justify-center md:justify-start">
+        <p class="font-semibold text-2xl">Kate Karume</p>
+        <p class="pt-2">Kate is  a passionate software engineer, she likes building and designing web applications.</p>
+        <div class="flex items-center justify-center md:justify-start text-2xl no-underline text-blue-800 pt-4">
+            <a class="" href="#">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a class="pl-4" href="#">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a class="pl-4" href="#">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a class="pl-4" href="#">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </div>
+</div>
